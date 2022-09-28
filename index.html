@@ -13,8 +13,7 @@
 
     <div class="app-wrap">
         <header>
-            <input type="text" autocomplete="off" class="search-box" placeholder="Search for a city..." />
-
+            <input type="text" autocomplete="off" class="input-box" placeholder="Search for a city..." />
         </header>
         <main>
             <section class="location">
@@ -22,9 +21,34 @@
                 <div class="date">Monday, 26 September 2022</div>
             </section>
             <div class="current">
+                <div class="sunrise-sunset">
+                    <div class="sunrise">
+                        <img src="./assets/sunrise-best.svg" />
+                        <p>sunrise</p>
+                    </div>
+                    <div class="sunset">
+
+                        <img src='./assets/sunset-best.svg'>
+                        <p>sunset</p>
+                    </div>
+                </div>
+
                 <div class="temp">15<span>&#8451</span></div>
-                <div class="weather">Sunny</div>
-                <div class="hi-low">12&#8451 / 16&#8451</div>
+                <div class="weather-description">
+                    <img id="weatherIcon" />
+                    <p>Sunny</p>
+                </div>
+                <div class="hi-low">
+                    <img src="./assets/temperature-svgrepo-MIN.svg" class="lowest" />
+                    <p class="min-temp"></p>
+
+                    <img src="./assets/temperature-svgrepo-MAX.svg" class="highest" />
+                    <p class="max-temp"></p>
+                </div>
+                <div class="feels-like">
+                    <img src="./assets/whitefeelslike.svg" />
+                    <p>17</p>
+                </div>
 
             </div>
 
@@ -34,6 +58,7 @@
 
 
     <script src="./main.js"></script>
+    <script src="moment.js" type="moment"></script>
 </body>
 
 </html>
