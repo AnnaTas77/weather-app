@@ -13,41 +13,67 @@
 
     <div class="app-wrap">
         <header>
-            <input type="text" autocomplete="off" class="input-box" placeholder="Search for a city..." />
+            <h1 class="title"> Weather App </h1>
         </header>
-        <main>
+
+        <div id="warning-modal" id="myModal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <p class="modal-text"></p>
+            </div>
+
+        </div>
+
+        <nav class="search-container">
+            <div class="input-wrapper">
+                <input type="text" autocomplete="off" id="input-box" placeholder="Search for a city..." />
+                <button id="search-btn" onclick="clickedSearch()">
+                    <img src="./assets/search1.svg" />
+                </button>
+            </div>
+
+            <button id="theme-toggler" onclick="themeToggle()">
+                <img id='sun' src='./assets/sun-half.svg' />
+                <img id='moon' class="visible" src='./assets/moon-dark.svg' />
+            </button>
+        </nav>
+
+        <main id="weather" style="visibility: hidden;">
             <section class="location">
-                <div class="city">London, GB</div>
-                <div class="date">Monday, 26 September 2022</div>
+                <div class="city"></div>
+                <div class="country"></div>
             </section>
             <div class="current">
+                <div class="date"></div>
                 <div class="sunrise-sunset">
                     <div class="sunrise">
                         <img src="./assets/sunrise-best.svg" />
-                        <p>sunrise</p>
+                        <p></p>
                     </div>
                     <div class="sunset">
-
                         <img src='./assets/sunset-best.svg'>
-                        <p>sunset</p>
+                        <p></p>
                     </div>
                 </div>
 
                 <div class="temp">15<span>&#8451</span></div>
                 <div class="weather-description">
                     <img id="weatherIcon" />
-                    <p>Sunny</p>
+                    <p></p>
                 </div>
                 <div class="hi-low">
-                    <img src="./assets/temperature-svgrepo-MIN.svg" class="lowest" />
-                    <p class="min-temp"></p>
-
-                    <img src="./assets/temperature-svgrepo-MAX.svg" class="highest" />
-                    <p class="max-temp"></p>
+                    <div class="low-box">
+                        <img src="./assets/temperature-svgrepo-MIN.svg" class="lowest" />
+                        <p class="min-temp"></p>
+                    </div>
+                    <div class="hi-box">
+                        <img src="./assets/temperature-svgrepo-MAX.svg" class="highest" />
+                        <p class="max-temp"></p>
+                    </div>
                 </div>
                 <div class="feels-like">
                     <img src="./assets/whitefeelslike.svg" />
-                    <p>17</p>
+                    <p></p>
                 </div>
 
             </div>
@@ -56,9 +82,7 @@
     </div>
 
 
-
     <script src="./main.js"></script>
-    <script src="moment.js" type="moment"></script>
 </body>
 
 </html>

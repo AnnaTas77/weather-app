@@ -5,11 +5,12 @@
 }
 
 body {
-    background-image: url(./assets/firewatchnight.jpg);
+    background-image: url(./assets/firewatch1green.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
     font-family: 'montserrat', sans-serif;
+    color: #091442;
 }
 
 .app-wrap {
@@ -18,31 +19,67 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+    /* background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)); */
 }
 
-header {
+.title {
+    padding: 20px;
+    margin-top: 50px;
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
-    padding: 50px 15px 15px;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
 }
 
-header input {
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px 25px 15px;
+    width: 100%;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 10px 15px;
     border: none;
     outline: none;
     border-radius: 15px 5px 15px 5px;
     background-color: rgba(255, 255, 255, 0.3);
-
     color: #313131;
-    font-size: 1.1rem;
-    font-weight: 300;
     transition: 0.2s ease-out;
 }
 
-header input:focus {
+.input-wrapper:focus {
     background-color: rgba(255, 255, 255, 0.6);
+}
+
+#input-box {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #313131;
+}
+
+#search-btn {
+    outline: none;
+    width: 25px;
+    background: transparent;
+    border: transparent;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.search-btn img {
+    width: 50px;
 }
 
 main {
@@ -50,15 +87,54 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 35px 35px 50px;
-    color: white;
+    padding-top: 45px;
+    padding-bottom: 30px;
     text-align: center;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
-    border-radius: 5px;
+    min-width: 370px;
+
+    /* Glassmorphism - https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.location .city {
-    font-size: 2rem;
+.current {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin-top: 10px;
+}
+
+.city {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.country {
+    background-color: #0d686cc4;
+    color: #ffffffde;
+    border-radius: 30%;
+    text-align: center;
+    margin-left: 6px;
+    margin-bottom: 15px;
+    padding: 3px;
+    font-weight: 600;
+}
+
+
+.date {
+    padding-top: 25px;
 }
 
 .sunrise-sunset {
@@ -78,11 +154,10 @@ main {
     height: 40px;
 }
 
-.current .temp {
-    font-size: 5rem;
+.temp {
+    font-size: 4rem;
     font-weight: 700;
-    text-shadow: 2px 10px rgba(0, 0, 0, 0.6);
-    padding: 0px 35px 35px 35px;
+    padding: 45px 35px 35px 35px;
 }
 
 .current .temp span {
@@ -93,11 +168,11 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 70%;
     font-size: 2rem;
     font-weight: 500;
     margin-top: 10px 10px;
-    text-shadow: 0px 5px rgba(0, 0, 0, 0.4);
-    margin-bottom: 25px;
+    margin-bottom: 45px;
     font-style: italic;
 
 }
@@ -107,7 +182,19 @@ main {
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-    text-shadow: 0px 5px rgba(0, 0, 0, 0.4);
+    width: 80%;
+}
+
+.low-box,
+.hi-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.low-box {
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .lowest,
@@ -124,7 +211,8 @@ main {
     align-items: center;
     justify-content: center;
     font-size: 1rem;
-    padding: 15px;
+    margin-bottom: 25px;
+    margin-top: 45px;
 }
 
 .feels-like img {
@@ -133,4 +221,93 @@ main {
 
 .feels-like p {
     font-size: 1.2rem;
+}
+
+
+
+/* LIGHT-DARK THEME TOGGLE */
+
+.dark-mode {
+    background-image: url(./assets/firewatchnight.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    color: white;
+}
+
+#theme-toggler {
+    height: 40px;
+    width: 40px;
+    border: none;
+    background-color: #2fa5cb30;
+    box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.14), -8px -8px 12px 0 rgba(255, 255, 255, 0.18);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+#theme-toggler:hover {
+    box-shadow: inset 2px 2px 5px rgba(163, 177, 198, 0.51), inset -2px -2px 5px rgba(255, 255, 255, 0.19);
+    filter: brightness(105%);
+}
+
+
+#theme-toggler img {
+    height: 25px;
+    width: 25px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+/* MODAL */
+
+/* The Modal (background) */
+#warning-modal {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    /* left: 0;
+    top: 0; */
+    width: 30%;
+    height: 30%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.modal-text {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+/* The Close Button */
+.close-modal {
+    color: #aaaaaa;
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
