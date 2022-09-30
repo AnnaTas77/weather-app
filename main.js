@@ -107,7 +107,7 @@ function dateCalc() {
 
 function convertTimestamp(unixTimestamp, timezone) {
     const sunSetRise = new Date((unixTimestamp * 1000 + timezone * 1000));
-    const formattedTime = sunSetRise.toLocaleTimeString("en-US", { timeZone: "UTC", hour: "2-digit", minute: "2-digit" });
+    const formattedTime = sunSetRise.toLocaleTimeString("en-GB", { timeZone: "UTC", hour: "2-digit", minute: "2-digit" });
     return formattedTime;
 }
 

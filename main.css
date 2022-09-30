@@ -123,7 +123,7 @@ main {
 
 .country {
     background-color: #0d686cc4;
-    color: #ffffffde;
+    color: #ffffffeb;
     border-radius: 30%;
     text-align: center;
     margin-left: 6px;
@@ -141,17 +141,33 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 80%
 }
 
 .sunrise,
 .sunset {
     font-size: 1rem;
-    padding: 55px 15px 0px 15px;
+    padding: 0px 15px 0px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin-top: 55px;
+}
+
+.sunrise {
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .sunrise img,
 .sunset img {
     height: 40px;
+}
+
+.sunrise p,
+.sunset p {
+    margin-top: 8px;
+    margin-left: 9px;
 }
 
 .temp {
@@ -262,6 +278,13 @@ main {
 
 .hidden {
     display: none;
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 45px;
 }
 
 
