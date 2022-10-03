@@ -1,4 +1,3 @@
-
 const weatherApi = {
     key: "5898d1f46544d841eac1352fba609ade",
     baseUrl: "https://api.openweathermap.org/data/2.5/"
@@ -11,31 +10,53 @@ userInput.addEventListener("keypress", getSearchValue);
 
 function getSearchValue(event) {
     if (event.key === "Enter") {
+        console.log('User input:', userInput.value);
         fetchWeather(userInput.value);
-        // console.log(userInput.value);
+        autoComplete(userInput.value);
+
     }
 }
 
 function clickedSearch() {
     fetchWeather(userInput.value);
+    autoComplete(userInput.value);
 }
-
 
 let modalText = document.getElementById("message");
 let searchBtn = document.getElementById("search-btn");
-let cityRef = document.getElementById("input-box");
+
+function autoComplete(city) {
+    fetch(`https://api.api-ninjas.com/v1/city?name=${city}&limit=7`,
+        {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Api-Key': 'lQkX1TNpDHxVEcCOdkizHg==ijMXifMjNytwpDx5'
+            }
+        })
+        .then((response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw Error(response.statusText);
+            }
+        }))
+        .then(data => {
+            console.log('Autocomplete Data:', data)
+        })
+        .catch((error) => {
+            console.log("Error:", error);
+        });
+}
 
 function fetchWeather(cityName) {
-    let cityValue = cityRef.value;
-    if (cityValue.length === 0) {
+    if (cityName === undefined || cityName.length === 0) {
         modalText.innerText = "Please enter a city name.";
         openPopup();
-        console.log('Pop up no city');
 
     } else {
         let url = `${weatherApi.baseUrl}weather?q=${cityName}&units=metric&appid=${weatherApi.key}`;
-        //Clear the input field
-        cityRef.value = "";
+        // userInput.value = "";
         fetch(url)
             .then((response => {
                 if (response.ok) {
