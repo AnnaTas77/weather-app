@@ -21,14 +21,17 @@ function clickedSearch() {
 }
 
 
-let modal = document.getElementById("warning-modal");
+let modalText = document.getElementById("message");
 let searchBtn = document.getElementById("search-btn");
 let cityRef = document.getElementById("input-box");
 
 function fetchWeather(cityName) {
     let cityValue = cityRef.value;
     if (cityValue.length === 0) {
-        modal.innerHTML = `<p class="modal-text">Please enter a city name.</p>`;
+        modalText.innerText = "Please enter a city name.";
+        openPopup();
+        console.log('Pop up no city');
+
     } else {
         let url = `${weatherApi.baseUrl}weather?q=${cityName}&units=metric&appid=${weatherApi.key}`;
         //Clear the input field
@@ -45,7 +48,8 @@ function fetchWeather(cityName) {
             .catch((error) => {
                 //If city name is NOT valid
                 console.log("Error:", error);
-                modal.innerHTML = `<p class="modal-text">City not found.</p>`;
+                modalText.innerText = `City not found.`;
+                openPopup();
             });
     }
 }
@@ -128,5 +132,17 @@ function themeToggle() {
         moon.classList.add("hidden");
     }
 }
+
+
+const modalPopup = document.getElementById("modal");
+function openPopup() {
+    modalPopup.classList.add("open-popup");
+
+}
+
+function closePopup() {
+    modalPopup.classList.remove("open-popup");
+}
+
 
 
