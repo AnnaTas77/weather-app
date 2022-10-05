@@ -8,8 +8,7 @@ A simple weather app created with JavaScript, CSS and HTML. The app fetches data
 ![Screenshot of the Weather App ](./assets/WeatherApp_merged7.jpg "Weather App")
 
 # See live 
-
-
+https://annatas-weather-app.netlify.app/
 
 # Features
 
