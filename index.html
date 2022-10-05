@@ -13,7 +13,7 @@
     <div class="modal-container" id="modal">
         <div class="popup-modal">
             <p class="modal-text" id="message">Text</p>
-            <button class="ok-btn" onclick="closePopup()">OK</button>
+            <button class="ok-btn">OK</button>
         </div>
 
     </div>
@@ -25,12 +25,13 @@
         <nav class="search-container">
             <div class="input-wrapper">
                 <input type="text" id="input-box" placeholder="Search for a city..." />
-                <button id="search-btn" onclick="clickedSearch()">
+                <button id="search-btn">
                     <img src="./assets/search1.svg" />
                 </button>
+                <ul class="autocomplete-menu" id="autocomplete-results"></ul>
             </div>
 
-            <button id="theme-toggler" onclick="themeToggle()">
+            <button id="theme-toggler">
                 <img id='sun' src='./assets/sun-half.svg' />
                 <img id='moon' class="visible" src='./assets/moon-dark.svg' />
             </button>
@@ -81,7 +82,7 @@
     </div>
 
 
-    <script src="./main.js"></script>
+    <script type="module" src="./main.js"></script>
 </body>
 
 </html>

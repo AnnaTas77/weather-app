@@ -5,7 +5,7 @@ A simple weather app created with JavaScript, CSS and HTML. The app fetches data
 
 # Screenshots
 
-![Screenshot of the Weather App ](./assets/weatherapp_merged.jpg "Weather App")
+![Screenshot of the Weather App ](./assets/WeatherApp_merged7.jpg "Weather App")
 
 # See live 
 
@@ -13,9 +13,11 @@ A simple weather app created with JavaScript, CSS and HTML. The app fetches data
 
 # Features
 
++ Autocomplete feature with matching letters in bold
+
 + Dark and light mode
 
-+ A custom pop-up modal box to notify the user if the city name does not exist or if the search field was left empty.
++ A custom pop-up modal box to notify the user if the city name does not exist or if the search field has been left empty.
 
 + Responsive web design approach used to create content that adjusts smoothly to various screen sizes.
 

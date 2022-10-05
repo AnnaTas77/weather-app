@@ -11,6 +11,9 @@ body {
     background-position: top center;
     font-family: 'montserrat', sans-serif;
     color: #091442;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .app-wrap {
@@ -23,7 +26,7 @@ body {
 
 .title {
     padding: 20px;
-    margin-top: 50px;
+    margin-top: 45px;
     display: flex;
     width: 100%;
     justify-content: center;
@@ -42,9 +45,12 @@ body {
 }
 
 .input-wrapper {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 250px;
+    width: 60vw;
     padding: 10px 15px;
     border: none;
     outline: none;
@@ -59,6 +65,7 @@ body {
 }
 
 #input-box {
+    width: 70%;
     outline: none;
     border: none;
     background-color: transparent;
@@ -72,7 +79,6 @@ body {
     width: 25px;
     background: transparent;
     border: transparent;
-    margin-left: 10px;
     cursor: pointer;
 }
 
@@ -88,9 +94,8 @@ main {
     padding-top: 45px;
     padding-bottom: 30px;
     text-align: center;
-    min-width: 350px;
-    width: 20%;
-    /* Glassmorphism - https://css.glass */
+    max-width: 360px;
+    width: 85vw;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 14px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -162,10 +167,18 @@ main {
     height: 40px;
 }
 
+.sunset img {
+    margin-left: 10px;
+}
+
 .sunrise p,
 .sunset p {
     margin-top: 8px;
     margin-left: 9px;
+}
+
+.sunrise p {
+    margin-right: 15px;
 }
 
 .temp {
@@ -259,7 +272,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 30px;
+    margin-left: 15px;
     cursor: pointer;
 }
 
@@ -345,4 +358,51 @@ footer {
     border: 1px solid rgba(255, 255, 255, 0.3);
     font-weight: 600;
 
+}
+
+
+
+/* AUTOCOMPLETE */
+
+.autocomplete-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 47px;
+    left: 0px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    max-height: 130px;
+    width: 100%;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    border: 1px solid #ffffffad;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.27);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.open-dropdown {
+    display: flex;
+}
+
+.autocomplete-menu ul {
+    padding: 0;
+    margin: 0;
+
+}
+
+.autocomplete-menu li {
+    padding: 5px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.54);
+}
+
+.autocomplete-menu li:hover {
+    background-color: rgba(255, 255, 255, 0.3);
 }
