@@ -298,6 +298,22 @@ footer {
     padding: 45px;
 }
 
+/* Light mode */
+/* @media (prefers-color-scheme: light) {
+    body {
+        background-image: url(./assets/firewatch1green.jpg);
+        color:#091442;
+    }
+} */
+
+/* Dark mode */
+/* @media (prefers-color-scheme: dark) {
+    body {
+        background-image: url(./assets/firewatchnight.jpg);
+        color: white;
+    }
+}  */
+
 
 
 /* MODAL */

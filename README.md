@@ -1,6 +1,6 @@
 # About
 
-A simple weather app created with JavaScript, CSS and HTML. The app fetches data from the OpenWeatherMap API in order to create a website that displays the current weather for any location. 
+A simple weather app website created with JavaScript, CSS and HTML. The app fetches data from the OpenWeatherMap API in order to create a website that displays the current weather for any location. 
 
 
 # Screenshots
@@ -14,7 +14,9 @@ https://annatas-weather-app.netlify.app/
 
 + Autocomplete feature with matching letters in bold
 
-+ Dark and light mode
++ Toggle between dark and light mode via a toggle button
+
++ Uses `prefers-color-scheme` to detect and dynamically adjust the dark and light mode based on the system preferences of the user.
 
 + A custom pop-up modal box to notify the user if the city name does not exist or if the search field has been left empty.
 

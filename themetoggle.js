@@ -5,15 +5,19 @@ sun.classList.add("hidden");
 
 document.getElementById("theme-toggler").addEventListener("click", themeToggle);
 
+
+
 function themeToggle() {
     const element = document.body;
     element.classList.toggle("dark-mode");
 
+    // Switch to Dark Theme
     if (moon.classList.contains("hidden")) {
-        moon.classList.remove("hidden");
         sun.classList.add("hidden");
+        moon.classList.remove("hidden");
     } else {
-        sun.classList.remove("hidden");
-        moon.classList.add("hidden");
-    }
+    // Switch to Light Theme
+    moon.classList.add("hidden");
+   sun.classList.remove("hidden");
+}
 }
